@@ -12,3 +12,16 @@ plt.xlabel('Time')
 plt.ylabel('GHI')
 plt.title('GHI over Time')
 plt.show()
+#evaluate impact of Cleaning
+avg_sensor_readings = data.groupby('Cleaning')[['ModA' , 'ModB']].mean()
+print(avg_sensor_readings)
+#Correlation Analysis
+correlation_matrix + data[['GHI', 'DNI', 'DHI', 'TModA','TModB','WS','WSgust','WD']].corr()
+sns.heatmap(correlation_matrix, annot=True)
+plt.show()
+#temperature analysis
+plt.scatter(data['RH'], data['Tamb'])
+plt.xlabel('relative humidity')
+plt.title('temperature vs Relative humidity')
+plt.show()
+#Histogram
